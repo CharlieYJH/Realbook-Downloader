@@ -8,9 +8,16 @@ def check_filename(directory, name):
             return True
     return False
 
+url = "http://www.guitarcats.com/realbook-jazz-standards/A"
+
 # Open up HTML
 browser = RoboBrowser(parser="html.parser", history=True)
-browser.open("http://www.guitarcats.com/realbook-jazz-standards/A")
+browser.open(url)
+
+if browser.response.status_code != 200:
+    print("Server responded with code " + str(browser.response.status_code) + " for " + url)
+    print("Exiting...")
+    quit()
 
 links = browser.find_all("a", {"class": "realbook_letter_link"})
 
@@ -18,6 +25,11 @@ for link in links:
 
     # Open A-Z categories 1 by 1
     browser.open(link["href"])
+
+    # Check proper response
+    if browser.response.status_code != 200:
+        print("Server responded with code " + str(browser.response.status_code) + " for " + link["href"])
+        continue
 
     # Get current category and find all its songs
     letter = link["href"][-1]
@@ -56,6 +68,11 @@ for link in links:
             #  continue
 
         browser.open(song_img_src)
+
+        # Check proper response
+        if browser.response.status_code != 200:
+            print("Server responded with code " + str(browser.response.status_code) + " for " + song_img_src)
+            continue
 
         # Write the image onto disk
         with open(save_path + song_name + "." + file_ext, "wb") as output:
