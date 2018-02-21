@@ -14,7 +14,7 @@ python downloader.py
 ```
 <br/>
 
-The lead sheets will be saved in the following folder
+The lead sheets will be saved in the following folder:
 ```
 Realbook-Downloader/Lead Sheets/
 ```
