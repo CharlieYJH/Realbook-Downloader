@@ -21,7 +21,7 @@ for link in links:
 
     # Get current category and find all its songs
     letter = link["href"][-1]
-    save_path = "../Lead Sheets/" + letter + "/"
+    save_path = "./Lead Sheets/" + letter + "/"
     song_link_list = browser.find_all("li", {"class": "realbooks_song_li"})
 
     # Make a folder for the current category

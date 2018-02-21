@@ -1,11 +1,7 @@
 beautifulsoup4==4.5.3
 certifi==2017.7.27.1
 chardet==3.0.4
-cx-Freeze==5.0.2
 idna==2.6
-mysql-connector-python==2.1.6
-numpy==1.12.1
-pygame==1.9.3
 requests==2.18.4
 robobrowser==0.5.3
 six==1.11.0
