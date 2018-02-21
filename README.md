@@ -4,7 +4,7 @@ A Python script which downloads all jazz standard lead sheets from http://www.gu
 ## Instructions
 1. Install the dependencies using pip
 ```
-pip install -r requiremeents.txt
+pip install -r requirements.txt
 ```
 <br/>
 
