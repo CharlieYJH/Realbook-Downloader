@@ -69,6 +69,9 @@ for link in links:
             # Check proper response
             if browser.response.status_code != 200:
                 print("Server responded with code " + str(browser.response.status_code) + " for " + song_img_src)
+                if counter - 1 == len(song_img_divs):
+                    os.rmdir(filepath)
+                    print("DELETED: " + song_name)
                 continue
 
             # Write the image onto disk
